@@ -16,6 +16,14 @@ services:
         calls:
             - [ 'setPositionField', ["%pix.sortable.behavior.position.field%"]]
 
+    pix_sortable_behavior.position.parse:
+        class: Pix\SortableBehaviorBundle\Services\PositionParseHandler
+        public: false
+        arguments:
+            - "@doctrine.parse.object_manager"
+        calls:
+            - [ 'setPositionField', ["%pix.sortable.behavior.position.field%"]]
+
     pix_sortable_behavior.twig.extension:
         class: Pix\SortableBehaviorBundle\Twig\ObjectPositionExtension
         arguments:
