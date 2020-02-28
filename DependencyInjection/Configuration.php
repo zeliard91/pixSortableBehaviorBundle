@@ -27,8 +27,12 @@ class Configuration implements ConfigurationInterface
     {
         $supportedDrivers = array('orm', 'mongodb', 'parse');
 
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('pix_sortable_behavior');
+        $treeBuilder = new TreeBuilder('pix_sortable_behavior');
+        if (!method_exists($treeBuilder, 'getRootNode')) {
+            $rootNode = $treeBuilder->root('pix_sortable_behavior');
+        } else {
+            $rootNode = $treeBuilder->getRootNode();
+        }
 
         $rootNode
             ->children()
