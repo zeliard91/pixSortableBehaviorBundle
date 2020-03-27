@@ -7,7 +7,7 @@ Offers a sortable feature for your Symfony2 admin listing
 
 The SonataAdminBundle provides a cookbook article here :
 
-https://github.com/sonata-project/SonataAdminBundle/blob/master/Resources/doc/cookbook/recipe_sortable_listing.rst
+https://github.com/sonata-project/SonataAdminBundle/blob/3.x/docs/cookbook/recipe_sortable_listing.rst
 
 ### Configuration
 
@@ -20,16 +20,16 @@ pix_sortable_behavior:
     position_field:
         default: sort #default value : position
         entities:
-            AppBundle/Entity/Foobar: order
-            AppBundle/Entity/Baz: rang
+            AppBundle\Entity\Foobar: order
+            AppBundle\Entity\Baz: rang
     sortable_groups:
         entities:
-            AppBundle/Entity/Baz: [ group ]
+            AppBundle\Entity\Baz: [ group ]
             
 ```
 
 #### Use a draggable list instead of up/down buttons
-In order to use a draggable list instead of up/down buttons, change the template in the ```move``` action to ```AppBundle:Admin:_sort_drag_drop.html.twig```.
+In order to use a draggable list instead of up/down buttons, change the template in the ```move``` action to ```PixSortableBehaviorBundle:Default:_sort_drag_drop.html.twig```.
 
 ```php
 <?php
@@ -78,7 +78,7 @@ pixSortableBehaviorBundle.error
             ->add('_action', null, array(
                 'actions' => array(
                     'move' => array(
-                        'template' => 'AppBundle:Admin:_sort.html.twig',
+                        'template' => 'PixSortableBehaviorBundle:Default:_sort_drag_drop.html.twig',
                         'enable_top_bottom_buttons' => true,
                     ),
                 ),
