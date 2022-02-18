@@ -24,10 +24,11 @@ services:
         calls:
             - [ 'setPositionField', ["%pix.sortable.behavior.position.field%"]]
 
-    pix_sortable_behavior.twig.extension:
-        class: Pix\SortableBehaviorBundle\Twig\ObjectPositionExtension
-        arguments:
-            - "@pix_sortable_behavior.position"
-        public: false
+    Pix\SortableBehaviorBundle\Twig\ObjectPositionExtension:
+        autowire: true
         tags:
             - { name: twig.extension }
+
+    Pix\SortableBehaviorBundle\Controller\SortableAdminController:
+        autoconfigure: true
+        autowire: true

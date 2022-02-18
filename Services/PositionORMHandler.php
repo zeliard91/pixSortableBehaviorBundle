@@ -43,7 +43,7 @@ class PositionORMHandler extends PositionHandler
      * @param object $entity
      * @return int
      */
-    public function getLastPosition($entity)
+    public function getLastPosition($entity): int
     {
         $entityClass = ClassUtils::getClass($entity);
         $parentEntityClass = true;

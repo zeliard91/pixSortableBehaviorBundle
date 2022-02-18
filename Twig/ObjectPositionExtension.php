@@ -52,14 +52,16 @@ class ObjectPositionExtension extends AbstractExtension
     /**
      * @return int
      */
-    public function currentPosition($entity) {
+    public function currentPosition($entity): int
+    {
         return $this->positionHandler->getCurrentPosition($entity);
     }
 
     /**
      * @return int
      */
-    public function lastPosition($entity) {
+    public function lastPosition($entity): int
+    {
         return $this->positionHandler->getLastPosition($entity);
     }
 }

@@ -38,7 +38,7 @@ class PositionParseHandler extends PositionHandler
      * @param object $entity
      * @return int
      */
-    public function getLastPosition($object)
+    public function getLastPosition($object): int
     {
         $objectClass = ClassUtils::getClass($object);
         $parentObjectClass = true;
